@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #444;
+    --folder-color: #ffeaa7; /* Cute yellow */
+    --link-color: #74b9ff; /* Pop blue */
+    --border-color: #2d3436;
+    --hover-bg: #f0f0f0;
+    --accent-pop: #fd79a8; /* Pink */
+}
+
+body {
+    font-family: 'Gochi Hand', cursive;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; /* Wobbly border */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 3px 0px var(--border-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo span {
+    color: var(--accent-pop);
+}
+
+/* Main Layout */
+.explorer-container {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    height: calc(100% - 100px);
+}
+
+/* Sidebar (Tree View) */
+.sidebar {
+    width: 250px;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+    box-shadow: 2px 3px 0px var(--border-color);
+    overflow-y: auto;
+    background: #fffdf0; /* Very light yellow paper tint */
+}
+
+/* Main View (Grid) */
+.main-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    box-shadow: 3px 4px 0px var(--border-color);
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Address Bar */
+.address-bar {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px dashed var(--border-color);
+    align-items: center;
+}
+
+.nav-btn {
+    background: none;
+    border: 2px solid var(--border-color);
+    border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: transform 0.1s;
+}
+
+.nav-btn:hover {
+    background-color: var(--folder-color);
+    transform: scale(1.1) rotate(-2deg);
+}
+
+.breadcrumb {
+    font-size: 1.5rem;
+    flex: 1;
+}
+
+/* Content Grid */
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.item:hover {
+    background-color: var(--hover-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+    transform: translateY(-2px);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 5px;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+}
+
+.folder .icon {
+    color: var(--folder-color);
+    /* Simple SVG Folder mimic via CSS or Font Awesome later. For now unicode/emoji is reliable for prototypes */
+}
+
+.link .icon {
+    color: var(--link-color);
+}
+
+.label {
+    font-size: 1.2rem;
+    word-break: break-word;
+    line-height: 1.1;
+}
+
+/* Scrollbar styling for webkit */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+    border: 2px solid #fff;
+}

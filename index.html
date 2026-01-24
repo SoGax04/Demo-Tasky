@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookmarks Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>★</span> My Bookmarks
+        </div>
+        <!-- Search placeholder -->
+        <div style="font-size: 1rem; border: 2px solid #2d3436; padding: 5px 15px; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">
+            Search...
+        </div>
+    </header>
+
+    <div class="explorer-container">
+        <!-- Sidebar Tree View (Static for visual prototype, logic handles main view) -->
+        <aside class="sidebar">
+            <div style="margin-bottom: 10px;"><strong>Quick Access</strong></div>
+            <ul style="list-style: none; padding-left: 10px;">
+                <li style="margin-bottom: 5px;">📁 Desktop</li>
+                <li style="margin-bottom: 5px;">📁 Downloads</li>
+                <li style="margin-bottom: 5px;">📁 Documents</li>
+                <li style="margin-bottom: 5px; color: var(--accent-pop);">❤ Favorites</li>
+            </ul>
+            <div style="margin-top: 20px; border-top: 2px dashed #ccc; padding-top: 10px;">
+                <strong>Drives</strong>
+                <ul style="list-style: none; padding-left: 10px;">
+                    <li>💾 Local Disk (C:)</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-view">
+            <div class="address-bar">
+                <button id="back-btn" class="nav-btn">←</button>
+                <div id="breadcrumb" class="breadcrumb">Root</div>
+            </div>
+
+            <div id="file-grid" class="file-grid">
+                <!-- Javascript will populate this -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
